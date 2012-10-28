@@ -14,7 +14,7 @@ public class Main {
             }
             String email = args[0];
             String password = args[1];
-            new Checkin(email, password).register();
+            new Checkin(email, password).checkin();
         } catch (Exception e) {
             e.printStackTrace();
         }
