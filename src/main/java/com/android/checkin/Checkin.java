@@ -50,14 +50,8 @@ public class Checkin {
     }
 
     public String checkin() throws IOException {
-        System.err.println("Fetching token...");
-        fetchToken();
-        System.err.println("Token: " + this.token);
-
         System.err.println("Fetching auth (google service)...");
         fetchAuthGsf();
-        System.err.println("AuthGsf: " + this.authGsf);
-
         System.err.println("Checking in...");
         doCheckin();
         System.err.println("AndroidId: " + this.androidId);
@@ -67,26 +61,11 @@ public class Checkin {
 
     // --------------------------------- auth --------------------------------- //
 
-    public void fetchToken() throws IOException {
-        ArrayList<NameValuePair> data = new ArrayList<NameValuePair>();
-        data.add(new BasicNameValuePair("accountType",    "HOSTED_OR_GOOGLE"));
-        data.add(new BasicNameValuePair("Passwd",         this.password));
-        data.add(new BasicNameValuePair("Email",          this.email));
-        data.add(new BasicNameValuePair("has_permission", "1"));
-        data.add(new BasicNameValuePair("add_account",    "1"));
-        data.add(new BasicNameValuePair("service",        "ac2dm"));
-        data.add(new BasicNameValuePair("source",         "android"));
-        data.add(new BasicNameValuePair("lang",           "en"));
-        data.add(new BasicNameValuePair("sdk_version",    "16"));
-
-        this.token = postFormFetchValue("https://android.clients.google.com/auth", data, "Token");
-    }
-
     public void fetchAuthGsf() throws IOException {
         ArrayList<NameValuePair> data = new ArrayList<NameValuePair>();
         data.add(new BasicNameValuePair("accountType",    "HOSTED_OR_GOOGLE"));
         data.add(new BasicNameValuePair("Email",          this.email));
-        data.add(new BasicNameValuePair("Token",          this.token));
+        data.add(new BasicNameValuePair("Passwd",         this.password));
         data.add(new BasicNameValuePair("has_permission", "1"));
         data.add(new BasicNameValuePair("service",        "ac2dm"));
         data.add(new BasicNameValuePair("source",         "android"));
@@ -116,6 +95,8 @@ public class Checkin {
             BufferedReader body = new BufferedReader(new InputStreamReader(entity.getContent()));
             while ((line = body.readLine()) != null) {
                 Matcher m = key_value_pattern.matcher(line);
+
+                System.err.println(line);
 
                 if (!m.matches())
                     throw new IOException(line + " // " + response.getStatusLine().toString());
