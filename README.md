@@ -35,22 +35,22 @@ You might be curious to know what is being sent:
 AndroidCheckinRequest.newBuilder()
     // imei
     .setId(0)
-    .setDigest("1-da39a3ee5e6b4b0d3255bfef95601890afd80709")
+    .setDigest("1-929a0dca0eee55513280171a8585da7dcd3700f8")
     .setCheckin(AndroidCheckinProto.newBuilder()
         .setBuild(AndroidBuildProto.newBuilder()
-            .setId("google/soju/crespo:4.1.2/JZO54K/485486:user/release-keys")
-            .setProduct("herring")
+            .setId("google/yakju/maguro:4.1.1/JRO03C/398337:user/release-keys")
+            .setProduct("tuna")
             .setCarrier("Google")
-            .setRadio("I9020XXKI1")
-            .setBootloader("I9020XXKL1")
+            .setRadio("I9250XXLA2")
+            .setBootloader("PRIMELA03")
             .setClient("android-google")
             .setTimestamp(new Date().getTime()/1000)
             .setGoogleServices(16)
-            .setDevice("crespo")
+            .setDevice("maguro")
             .setSdkVersion(16)
-            .setModel("Nexus S")
+            .setModel("Galaxy Nexus")
             .setManufacturer("Samsung")
-            .setBuildProduct("soju")
+            .setBuildProduct("yakju")
             .setOtaInstalled(false))
         .setLastCheckinMsec(0)
         .addEvent(AndroidEventProto.newBuilder()
@@ -83,13 +83,16 @@ AndroidCheckinRequest.newBuilder()
         .setScreenLayout(2)
         .setHasHardKeyboard(false)
         .setHasFiveWayNavigation(false)
-        .setScreenDensity(240)
+        .setScreenDensity(320)
         .setGlEsVersion(131072)
         .addAllSystemSharedLibrary(Arrays.asList(
             "android.test.runner",
             "com.android.future.usb.accessory",
             "com.android.location.provider",
             "com.android.nfc_extras",
+            "com.google.android.maps",
+            "com.google.android.media.effects",
+            "com.google.widevine.software.drm",
             "javax.obex"))
         .addAllSystemAvailableFeature(Arrays.asList(
             "android.hardware.bluetooth",
@@ -106,6 +109,7 @@ AndroidCheckinRequest.newBuilder()
             "android.hardware.screen.landscape",
             "android.hardware.screen.portrait",
             "android.hardware.sensor.accelerometer",
+            "android.hardware.sensor.barometer",
             "android.hardware.sensor.compass",
             "android.hardware.sensor.gyroscope",
             "android.hardware.sensor.light",
@@ -117,19 +121,22 @@ AndroidCheckinRequest.newBuilder()
             "android.hardware.touchscreen.multitouch.distinct",
             "android.hardware.touchscreen.multitouch.jazzhand",
             "android.hardware.usb.accessory",
+            "android.hardware.usb.host",
             "android.hardware.wifi",
+            "android.hardware.wifi.direct",
             "android.software.live_wallpaper",
             "android.software.sip",
             "android.software.sip.voip",
             "com.cyanogenmod.android",
             "com.cyanogenmod.nfc.enhanced",
+            "com.google.android.feature.GOOGLE_BUILD",
             "com.nxp.mifare",
             "com.tmobile.software.themes"))
         .addAllNativePlatform(Arrays.asList(
             "armeabi-v7a",
             "armeabi"))
-        .setScreenWidth(480)
-        .setScreenHeight(800)
+        .setScreenWidth(720)
+        .setScreenHeight(1184)
         .addAllSystemSupportedLocale(Arrays.asList(
             "af", "af_ZA", "am", "am_ET", "ar", "ar_EG", "bg", "bg_BG",
             "ca", "ca_ES", "cs", "cs_CZ", "da", "da_DK", "de", "de_AT",
