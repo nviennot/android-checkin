@@ -3,7 +3,7 @@ Android Checkin
 
 Android Checkin allows you to register a google account as if you were on
 android.  
-It checks in google's servers by passing a Nexus S / JellyBean
+It checks in google's servers by passing a Galaxy Nexus / JellyBean
 profile, and returns a valid android\_id usable on Google Play.
 
 The parameters identifying the device are randomized (but valid).
