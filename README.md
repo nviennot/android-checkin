@@ -10,6 +10,15 @@ The parameters identifying the device are randomized (but valid).
 
 TODO: Add other devices, like tablets.
 
+Security
+-----
+
+For this tool to work, your google account needs special configuration:
+
+- if you use Google's [2-Step Verification](https://support.google.com/accounts/topic/28786) (if you don't know what this is, you probably don't use it and should go to the next point), you need to generate a dedicated [app-password](https://support.google.com/accounts/answer/185833) for android-checkin to work.
+
+- if you don't use Google's [2-Step Verification](https://support.google.com/accounts/topic/28786), you should activate the Google's [less secure apps](https://support.google.com/accounts/answer/185833).
+
 Usage
 -----
 
